@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles%}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>trems and conditions</title>
+  </head>
+  <style>
+    body{
+      background-image: url({% static 'a11.jpg'%});
+      box-sizing: cover;
+      background-size: 100% 800px;
+      background-repeat: no-repeat;
+    }
+    h2{
+      margin: 40px;
+    }
+    p{
+      margin: 40px;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">{{user.username}}</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">Wellcome {{request.user}}</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/superAdmin/home"/>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" type="btn btn-success" href="/logout/">logout</a>
+      </li>
+     
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+    <h1 style="border: 2px solid; margin: 20px">Trams and conditions </h1>
+    <div class="contend">
+
+      <h2><u>Our humble beginnings</h2></u>
+
+      <p>Our humble beginnings
+In 2007, Tom Kelly was trying to set up an auction for his mother to raise funds for a cause near and dear to her heart. He encountered steep commission fees and a lack of user control. Tom recognized this represented a real barrier to nonprofits and everyday heroes like his mom, who wanted to make a real difference in their communities. It was challenging to take their fundraising efforts to the next level due to lack of resources, expertise, and time.
+
+Tom founded the Charity Auctions Today online auction platform that lets anyone set up a professional-quality auction or mobile bidding event in minutes. The platform features customizable templates, multiple mobile bidding options, personalized support from human account managers, and many more user-friendly features. Charity Auctions Today is the “click-and-easy” way to grow your bidding pool, increase your fundraising profits and reduce expenses so more money goes directly to your cause.</p>
+
+  <h2>Look how far we’ve come</h2>
+  <p>Since launching Charity Auctions Today, Tom has helped organizations raise over $500,000,000. The platform has hosted over 250,000 auctions to date and continues to grow every month as people realize the value that Tom and his team bring to their non-profits. They are truly an extension of your in-house fundraising team.
+
+A</p>
+  <h2>A message from our founder, Tom</h2>
+  <p>Thank you from the bottom of my heart. This has been a truly empowering journey. I have enjoyed being able to take something that started as a way to help my mother and grow it to help so many more people. Hearing your success stories is what keeps me getting out of bed everyday to create the best online auction platform, period. I will keep working hard to make sure that everyone who needs help raising funds for causes near and dear to their hearts has the support they are looking for.</p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

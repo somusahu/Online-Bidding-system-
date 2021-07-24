@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Add_product</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<style>
+.inputstl { 
+    padding: 5px; 
+    border: solid 1px #B3FFB3; 
+    outline: 0; 
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #A4FFA4), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #A4FFA4 1px, #FFFFFF 25px); 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+
+    } 
+    .container{
+      margin-top: 100px;
+      margin-right: 100px;
+      opacity: 0.7;
+    } 
+    .container:hover{
+      opacity: 0.9;
+    }
+    body{
+      background-image: url({% static 'b1.jpg'%});
+      box-sizing: cover;
+      background-size: 100% 1000px;
+      background-repeat: no-repeat;
+    }
+    #name2{
+      width: 400px;
+      padding: 5px; 
+    border: solid 1px #B3FFB3; 
+    outline: 0; 
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #A4FFA4), to(#FFFFFF)); 
+    background: -moz-linear-gradient(top, #FFFFFF, #A4FFA4 1px, #FFFFFF 25px); 
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px; 
+    }
+</style>
+<body>
+	<form method="post"  enctype="multipart/form-data">
+     {% if messages %}
+  {% for message in messages %}
+  <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %} >{{message}}</p>
+  {% endfor %}
+{% endif %}
+		{% csrf_token %}
+    <div class="container">
+      <h1><u>add product</u></h1>
+          <div class="form-group">
+        <label for="name1" class="col-sm-2 control-label">product Name:</label>
+        <div class="col-sm-5 input-group">
+          <input type="text" class="form-control inputstl" id="name1" name="pn" placeholder="product name ">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address1" class="col-sm-2 control-label">product deteils</label>
+        <div class="col-sm-5 input-group">
+          <input type="text" class="form-control inputstl" id="address1" name="pd" placeholder="Product deteils">
+        </div>
+      </div>   
+
+
+      <div class="form-group">
+        <label for="number" class="col-sm-2 control-label">price</label>
+        <div class="col-sm-5 input-group">
+          <input type="number" class="form-control inputstl" id="address1" name="mrp" placeholder="price">
+        </div>
+        </div>
+
+        <div class="form-group">
+        <label for="name1" class="col-sm-2 control-label">Product img</label>
+        <div class="col-sm-5 input-group">
+          <input type="file" class="form-control inputstl" id="name1" name="pimg" placeholder="product name ">
+        </div>
+      </div>
+      <p><b> select your category</p></b>
+
+     <select id="name2"  class="form-control"  name="cat">
+        {%for i in cat%}
+         <option value="{{i.id}}">{{i.category}}</option>
+        {%endfor%}
+     </select>
+           <b><p>componey_name</p></b>
+
+     <select id="name2" class="form-control" name="com">
+        {%for i in com%}
+         <option value="{{i.id}}">{{i.compony_name}}</option>
+        {%endfor%}
+     </select>
+
+      <div class="form-group">
+            <label for="dtpickerdemo" class="col-sm-2 control-label"><b>Auction start [  Date/time of birth: ]</b></b></label>
+                <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
+                    <input type='date' placeholder="MONTH/DATE/YEAR time AM:PM" class="form-control inputstl" name="time" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>     
+
+             <div class="form-group">
+            <label for="dtpickerdemo" class="col-sm-2 control-label"><b>Auction End [  Date/time of birth: ]</b></label>
+                <div class='col-sm-4 input-group date ' id='dtpickerdemo'>
+                    <input type='date' class="form-control inputstl" name="end" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div><br><br>
+                <input type="submit" role="btn" value="Add_product">
+                <button>
+                  <a class="nav-link" type="btn btn-success" href="/seller/home/">Home</a>           
+                </button>
+                 </div>        
+
+ 
+   </div> 
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+   <!-<script type="text/javascript">
+            $(function () {
+                $('#dtpickerdemo').datetimepicker();
+            });
+        </script> 
+       
+</form>
+
+      
+          
+</body>
+</html>
+
+
+		
+	</form>
+	
+
+</body>
+</html>

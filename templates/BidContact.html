@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>contact</title>
+
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+ #icon{
+    width: 70px;
+  }
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+  </head>
+
+  <body>
+  	<form method="post">
+  		{% csrf_token %}
+     <div class="container-fluid">
+    
+  
+  <form method="post" action="/bidder/bid/">
+    {% csrf_token%}
+    <div id="ic" class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a  class="nav-link" href="#"><img id="icon" src="{%static 'Au1.png'%}"></a>
+      </li>
+      <li  class="nav-item">
+        <a style="margin-left:  45rem; font-size: 30px;" class="nav-link" href="/logout/">Login /</a>
+      </li>
+      <li  class="nav-item">
+        <a style="font-size: 30px;" class="nav-link" href="/signup/">Ragistara</a>
+      </li>
+     
+    </ul>
+  </div>
+  <div class="card-body" style="background-color: skyblue;">
+    <h3 class="card-title">Bid and Win the Bid</h3>
+    <p class="card-text">When you are selling your asset, then all you need is the best possible price for it in the shortest time. And, this requires reaching out to as many buyers as possible. So, if you are worried about searching for prospective bidders, then we have a great news for you: Salasar Online Auction House provides forward e-auctions for all range of items. All you need to do is, connect with us the soonest.</p>
+  </div>
+   <div id="content" class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a id="ab" class="nav-link active" href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/home/">Live Auction</a>
+      </li>
+    
+     <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/video/">offers</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/about/">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/contact/">CONTACT US</a>
+      </li>
+     
+      
+    </ul>
+  </div>
+</div>
+ 
+
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="{% static 'map1.jpg'%}" style="width:100%">
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Andhra Pradesh</option>
+          <option value="canada">Arunachal Pradesh</option>
+          <option value="usa">Assam</option>
+          <option value="usa">Bihar</option>
+          <option value="usa">Chattisgarh</option>
+          <option value="usa">goa</option>
+          <option value="usa">Gujarat</option>
+          <option value="usa">haryana</option>
+          <option value="usa">Himachal</option>
+          <option value="usa">Jharkhand</option>
+          <option value="usa">Karnatak</option>
+          <option value="usa">kerala</option>
+          <option value="usa">MAdhya Pradesh</option>
+          <option value="usa">Maharashtra</option>
+          <option value="usa">Manipur</option>
+          <option value="usa">Meghalay</option>
+          <option value="usa">Mizoram</option>
+          <option value="usa">Nagalan</option>
+          <option value="usa">Odish</option>
+          <option value="usa">Panjab</option>
+          <option value="usa">Rajastan</option>
+          <option value="usa">Sikkim</option>
+          <option value="usa">Tamil Nadu</option>
+          <option value="usa">Telangana</option>
+          <option value="usa">Tripura</option>
+          <option value="usa">Utarakhand</option>
+          <option value="usa">Utarpradesh</option>
+          <option value="usa">Best Bangal</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+    		
+  	</form>
+  	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+  	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+   </body>
+  		
+</html>

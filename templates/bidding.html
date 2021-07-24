@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bidding</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	
+	<style>
+		#pcard{
+			border: 2px solid;
+			background-color: pink;
+		}
+	body{
+		background-color: gray;
+
+		}
+	</style>
+</head>
+<body >
+	<form method="post">
+		{% csrf_token %}
+		 <nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">{{request.user}}</a>
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+       <li class="nav-item">
+        <a class="nav-link" type="btn btn-success" href="/seller/home/">Home</a>
+      </li>
+    </ul>
+   
+  </div>
+</nav>
+		<p style="color: red; font-size:3rem;">Record of bidder !</p>
+
+		{% for i in data %}
+		<div id="pcard" class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">User => {{ i.user.first_name }} {{ i.user.last_name }}</h5>
+        <p class="card-text">usertype =>{{i.usertype}}</p>
+
+				<p class="card-text">mobile number =>{{i.mobile}}</p>
+				<p class="card-text">Address =>{{i.address}}</p>
+				<p class="card-text">Username=>{{i.user.username}}</p>
+
+				<p>Email Id =>{{i.user.email}}</p>
+				</div>
+		</div>
+		{% endfor %}			
+	</form>
+
+
+</body>
+</html>

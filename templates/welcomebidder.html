@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Auction platform </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <style>
+
+  body{
+    /*background-image: url({%static 'abc.jpg'%});*/
+  }
+  table{
+    margin: 20px;
+  }
+  a{
+    margin-left: 60px;
+  }
+  #content{
+    background-color: black;
+  }
+  #ab{
+    font-size: 30px;
+  }
+  #icon{
+    width: 70px;
+  }
+  #ic{
+    background-color: pink;
+  }
+  .card{
+    background-color: rgba(100,100,100,0.2);
+    margin:20px ;
+    box-shadow: 2px 2px 2px 2px silver;
+
+    
+  }
+  th{
+    background-color: gray;
+    margin: 10px;
+
+  }
+  .sideform{
+    margin-left: 100px;
+    margin-right: 0px;
+    margin-top: 20px;
+    padding: 25px;
+  }
+</style>
+  
+</head>
+<body>
+  
+  <div class="container-fluid">
+    
+  
+      <div id="ic" class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a  class="nav-link" href="#"><img id="icon" src="{%static 'Au1.png'%}"></a>
+      </li>
+      <li  class="nav-item">
+        <a style="margin-left:  45rem; font-size: 30px;" class="nav-link" href="/logout/">Login /</a>
+      </li>
+      <li  class="nav-item">
+        <a style="font-size: 30px;" class="nav-link" href="/signup/">Ragistara</a>
+      </li>
+     
+    </ul>
+  </div>
+  <div class="card-body" style="background-color: skyblue;">
+    <h3 class="card-title">Bid and Win the Bid</h3>
+    <p class="card-text">When you are selling your asset, then all you need is the best possible price for it in the shortest time. And, this requires reaching out to as many buyers as possible. So, if you are worried about searching for prospective bidders, then we have a great news for you: Salasar Online Auction House provides forward e-auctions for all range of items. All you need to do is, connect with us the soonest.</p>
+  </div>
+   <div id="content" class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a id="ab" class="nav-link active" href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/home/">Live Auction</a>
+      </li>
+    
+     <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/video/">offers</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/about">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/contact/">CONTACT US</a>
+      </li>
+      <li class="sideform">
+          <form method="POST"  action="/bidder/search/" class="form-inline mt-3 mx-0">       
+            
+    {% csrf_token%}
+
+         <input type="search" name="q" class="form-control mr-sm-2">      
+      <li class="mr-1"><div class="input-group-append">
+          <input type="submit" class="btn btn-outline-success my-2 my-lg-0 ">
+       </div></li>
+     </form>
+      </li>
+     
+      
+    </ul>
+    
+  </div>
+</div>
+<form method="post" action="/bidder/bid/">
+    {% csrf_token%}
+
+{% block content %}
+
+<h1 style="font-size: 7rem; text-align: center;" >Auctions</h1>
+{% for i in proobj %}
+
+
+<div class="card">
+
+
+ 
+
+  <script>
+
+// Set the date we're counting down to
+
+var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById('demo').innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+  <table>
+    <tr>
+      <th></th>
+     <th class="card-title"><h1>{{ i.Product_details }}</h1> </th>
+     
+     <th class="card-title"><h2><a href="{%url 'bidder:pro' id=i.id %}">Bid now</a></h2> </th>
+    </tr>
+    <tr>
+
+      <td><img class="card-img-top" alt="Card image cap" style="width: 16rem; margin-left: 200px;" src="{{i.pro_img.url }}"></td>
+      <td class="card-title">{{i.Product_name }}
+        <h2 class="card-title" >{{i.end_time}}</h2>
+        <h2 class="card-title"><b>max bid</b>{{ i.price}}</h2>
+      </td>
+      <h1 id="demo"></h1>
+      <td><h3>{{i.user.user.first_name}}</h3></td>
+       
+
+    </tr>
+   
+  </table>
+</div>
+{% endfor %}
+{% endblock content %}
+ 
+
+
+
+  </form>
+</div>
+
+
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+<!---<div class="category">
+  {% for i in proobj %}
+  <div class="card-body">
+    <h5 class="card-title">{{i.Product_name }}</h5>
+    <h5 class="card-title">{{i.update_time }}</h5>
+    <h5 class="card-title">{{i.end_time }}</h5>
+   <h5 class="card-title">{{i.Product_name }}</h5>
+    
+  </div>
+ 
+</div>
+{% endfor %}
+<div class="contend">category </div>------->

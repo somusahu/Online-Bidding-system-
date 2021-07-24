@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+  <title>super </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<style>
+	body{
+		background-color:lightblue;
+	}
+	#step1{
+		width: 33.33%;
+		height: 100px;
+		background-color: pink;
+		border: 2px solid;
+		margin-left: 100px;
+		margin-top: 20px;
+
+
+	}
+	#step2{
+		width: 33.33%;
+		height: 100px;
+		background-color: pink;
+		border: 2px solid;
+		margin-left: 300px;
+		margin-top: 20px;
+
+	}
+	#step3{
+		width: 33.33%;
+		height: 100px;
+		background-color: pink;
+		border: 2px solid;;
+		margin-left: 600px;
+		margin-top: 20px;
+	}
+	h3{
+		margin: 20px;
+	}
+	.action{
+		width: 100%;
+		height: 100px;
+		background-color: pink;
+		border: 2px solid;;
+		margin: 20px;
+	
+	}
+</style>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+     <nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">{{user.username}}</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#">Wellcome {{request.user}}</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/superAdmin/home"/>Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" type="btn btn-success" href="/login/">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" type="btn btn-success" href="/signup/">signup</a>
+      </li>
+   
+    </ul>
+      </div>
+</nav>
+<h2>Wornanig : please do follow this method </h2>
+<div id="step1">
+	<h3>Step :1 create a company</h3>
+</div>
+<div id="step2">
+	<h3>Step :2 Add category </h3> 
+</div>
+<div id="step3">
+	<h3>Step :3  Add product</h3>
+</div>
+
+<div class="action">
+	<h2>To use this website you have to follow these rule which are given above now onlone bidding juct got easier !</h2>
+</div>
+
+  </form>
+    
+</body>
+</html>

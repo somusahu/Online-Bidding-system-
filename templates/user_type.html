@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Usertype</title>
+	 <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+	.card{
+		float: left;
+		margin: 20px;
+
+	}
+	#cardimg{
+		width: 100%;
+		height: 200px;
+	}
+	body{
+		background-color: orange;
+	}
+	#pcard{
+		box-shadow: 5px 10px 10px 6px black;
+	}
+</style>
+<body>
+	<form method="post">
+		{% csrf_token %}
+		<nav class="navbar navbar-expand-lg navbar-light bg-info">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon">{{user.username}}</span>
+  			</button>
+  		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+  			<a class="navbar-brand" href="#">Wellcome {{request.user}}</a>
+  			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+  				<li class="nav-item active">
+  					<a class="nav-link" href="/superAdmin/home"/>Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" type="btn btn-success" href="/login/">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" type="btn btn-success" href="/signup/">signup</a>
+      </li>
+      <li class="nav-item">
+        <div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Profile
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="card bg-dark text-white">
+  <img id="cardimg" class="card-img " src="{% static 'a12.jpg' %}" alt="Card image">
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text">Last updated 3 mins ago</p>
+  </div>
+</div>
+		{% for i in data %}
+		<div id="pcard" class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">User => {{ i.user.first_name }} {{ i.user.last_name }}</h5>
+        <p class="card-text">usertype =><b>{{i.usertype}}</b></p>
+
+				<p class="card-text">mobile number =><b>{{i.mobile}}</b></p>
+				<p class="card-text">Address =><b>{{i.address}}</b></p>
+				<p>Email Id =><b>{{i.user.email}}</b></p>
+        <p>username =><b>{{i.user.username}}</b></p>
+				</div>
+		</div>
+		{% endfor %}			
+			</form>
+			
+
+</body>
+</html>

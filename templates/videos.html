@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Auction platform </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <style>
+
+  body{
+    /*background-image: url({%static 'abc.jpg'%});*/
+  }
+  table{
+    margin: 20px;
+  }
+  a{
+    margin-left: 60px;
+  }
+  #content{
+    background-color: black;
+  }
+  #ab{
+    font-size: 30px;
+  }
+  #icon{
+    width: 70px;
+  }
+  #ic{
+    background-color: pink;
+  }
+  .card{
+    background-color: rgba(100,100,100,0.2);
+    margin:20px ;
+    box-shadow: 2px 2px 2px 2px silver;
+
+    
+  }
+  h2,h5{
+    margin: 20px;
+    
+  }
+  th{
+    background-color: gray;
+    margin: 10px;
+
+  }
+
+</style>
+  
+</head>
+<body>
+  <div class="container-fluid">
+    
+  
+  <form method="post">
+    {% csrf_token%}
+    <div id="ic" class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a  class="nav-link" href="#"><img id="icon" src="{%static 'Au1.png'%}"></a>
+      </li>
+      <li  class="nav-item">
+        <a style="margin-left:  45rem; font-size: 30px;" class="nav-link" href="/logout/">Login /</a>
+      </li>
+      <li  class="nav-item">
+        <a style="font-size: 30px;" class="nav-link" href="/signup/">Ragistara</a>
+      </li>
+     
+    </ul>
+  </div>
+  <div class="card-body" style="background-color: skyblue;">
+    <h3 class="card-title">Bid and Win the Bid</h3>
+    <p class="card-text">When you are selling your asset, then all you need is the best possible price for it in the shortest time. And, this requires reaching out to as many buyers as possible. So, if you are worried about searching for prospective bidders, then we have a great news for you: Salasar Online Auction House provides forward e-auctions for all range of items. All you need to do is, connect with us the soonest.</p>
+  </div>
+   <div id="content" class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">
+        <a id="ab" class="nav-link active" href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/home/">Live Auction</a>
+      </li>
+    
+     <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/video/">offers</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/about">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a id="ab" class="nav-link " href="/bidder/contact/">CONTACT US</a>
+      </li>
+     
+      
+    </ul>
+  </div>
+</div>
+
+<h1 style="font-size: 7rem; text-align: center; color: blue;" >offers</h1>
+<h4 style="text-align: center; color: blue;">Offers you cannot miss</h4>
+<hr>
+<div class="container-fluid" style="border: 1px solid;" >
+  <div class="row" >
+    <div class="col">
+      <h2>What Is a bidder Offer?</h2><br>
+      <h5>A bidding offer is a bid to purchase some or all of the shareholders' stock in a corporation. Tender offers are typically made publicly and invite shareholders to sell their shares for a specified price and within a particular window of time. The price offered is usually at a premium to the market price and is often contingent upon a minimum or a maximum number of shares sold.
+
+</h5><br><br>
+<h2>What Is Bid and Ask?</h2><br>
+<h5>The term bid and ask (also known as bid and offer) refers to a two-way price quotation that indicates the best potential price at which a security can be sold and bought at a given point in time. The bid price represents the maximum price that a buyer is willing to pay for a share of stock or other security. The ask price represents the minimum price that a seller is willing to take for that same security. A trade or transaction occurs when a buyer in the market is willing to pay the best offer available—or is willing to sell at the highest bid.</h5>
+      
+<h2>How a Tender Offer Works</h2><br>
+<h5>A tender offer often occurs when an investor proposes buying shares from every shareholder of a publicly traded company for a certain price at a certain time. The investor normally offers a higher price per share than the company’s stock price, providing shareholders a greater incentive to sell their shares.
+
+
+Most tender offers are made at a specified price that represents a significant premium over the current stock share price. A tender offer might, for instance, be made to purchase outstanding stock shares for $18 a share when the current market price is only $15 a share. The reason for offering the premium is to induce a large number of shareholders to sell their shares. In the case of a takeover attempt, the tender may be conditional on the prospective buyer being able to obtain a certain amount of shares, such as a sufficient number of shares to constitute a controlling interest in the company.
+
+A publicly traded company issues a tender offer with the intent to buy back its own outstanding securities. Sometimes, a privately or publicly traded company executes a tender offer directly to shareholders without the board of directors’ (BOD) consent, resulting in a hostile takeover. Acquirers include hedge funds, private equity firms, management-led investor groups, and other companies.
+
+The day after the announcement, a target company’s shares trade below or at a discount to the offer price, which is attributed to the uncertainty of and time needed for the offer. As the closing date nears and issues are resolved, the spread typically narrows.
+
+Securities and Exchange Commission (SEC) laws require any corporation or individual acquiring 5% of a company to disclose information to the SEC, the target company, and the exchange.1﻿﻿﻿</h5>
+    </div>
+    
+  </div>
+  
+</div>
+</form>
+</div>
+</body>
+</html>

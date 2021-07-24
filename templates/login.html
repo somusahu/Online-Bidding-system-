@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'somu/style.css' %}">
+
+    
+	<style>
+        #icon{
+            width: 30px;
+            height: 30px;
+            color: black;
+        }
+        *{
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+         }
+section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(-39deg,#03a9f4 50%,#262626 50%,#607d86 100%);
+    filter: hue-rotate(128);
+    animation: animate 16s linear infinite;
+}
+@keyframes animate
+{
+    0%
+    {
+        filter: hue-rotate(1deg);
+    }
+    100%
+    {
+        filter: hue-rotate(500deg);
+    }
+    0%
+    {
+        filter: hue-rotate(0deg);
+    }
+}
+.box{
+    position: relative;
+    padding: 50px;
+    width: 500px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+}
+.box::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+    background: linear-gradient(to bottom,rgba(255,255,255,0.3)0%,rgba(255,255,255,0.3)15%,transparent 50%,transparent 85%,rgba(255,255,255,0.3)100%);
+}
+.box .form{
+    position: relative;
+    width: 120%;
+}
+
+.box .form h2
+{
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.box .form .inputbox
+{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.box .form .inputbox input
+{
+   width: 100%;
+   outline: none;
+   background: transparent;padding: 8px 10px;
+   border-radius: 6px;
+   padding-left: 40px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 300;
+   box-shadow: inset 0 0 25px rgba(0,0,0,0.2);
+
+}
+.box .form .inputbox input[type="submit"]
+{
+    background: #fff;
+    color: #111;
+    padding: 8px 10px;box-shadow: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+}
+
+.box .form .inputbox img{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transform: scale(0.4);
+    filter:invert(2); 
+}
+.remeber{
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+.box .form p{
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.box .form a{
+    color: #fff;
+}
+
+.inputbox1
+{
+    background: red;
+    color: blue;
+    padding: 8px 10px;box-shadow: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+}
+a{
+    color:#fff;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 10px;box-shadow: none;
+    font-size: 20px;
+
+
+
+}
+
+
+
+	</style>
+
+</head>
+<body>
+    <section>
+        <div class="box">
+        <div class="form">
+        
+        <h2>Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <form >
+                <div class="inputbox">
+                    <input type="text" name="uname" placeholder="Username">
+                    <img id="icon" src="{%static 'user.png'%}">
+                </div>
+                <div class="inputbox">
+                    <input type="password" name="password" placeholder="password">
+                    <img id="icon" src="{%static 'lock.png'%}">
+                </div>
+                <label class="remeber"><input type="checkbox" >Remeber Me </label>
+
+                <div class="inputbox">
+                    <input type="submit" value="Login">
+                </div>   
+                <p>Forget <a href="#">Password</a></p>
+                <div class="inputbox1">
+                    <p>Don't have a HiBid account? <a href="/signup/">Register</a></p>
+
+                    
+                </div>
+            </form>
+                
+        </form>
+            
+            </div>
+        
+        </div>  
+    </section> 
+</body>
+</html>
